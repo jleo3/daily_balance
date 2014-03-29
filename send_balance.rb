@@ -7,6 +7,7 @@ module Mailer
     Pony.mail({
       :to => ENV['GMAIL_TO'],
       :from => ENV['GMAIL_FROM'],
+      :subject => "Daily Checking Account Balance Update",
       :body => "Hello! Your checking account balance is: #{balance}.",
       :via => :smtp,
       :via_options => {
