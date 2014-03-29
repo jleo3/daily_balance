@@ -5,3 +5,4 @@ gem "pry-debugger"
 gem "capybara"
 gem "selenium-webdriver"
 gem "pony"
+gem "whenever", require: false

@@ -2,7 +2,6 @@ require "pony"
 require "dotenv"
 Dotenv.load
 
-puts ENV["GMAIL_PASSWORD"]
 module Mailer
   def send_daily_balance(balance)
     Pony.mail({

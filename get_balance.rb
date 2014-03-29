@@ -1,7 +1,6 @@
 require "capybara"
-require "pry-debugger"
 require "dotenv"
-require "./send_balance"
+require_relative "send_balance"
 
 include Capybara::DSL
 include Mailer
@@ -14,7 +13,7 @@ click_button "Log in"
 fill_in "Email", with: ENV["MINT_EMAIL"]
 fill_in "Password", with: ENV["MINT_PASSWORD"]
 click_button "Log in"
+sleep 5
 balance = find("#account-#{ENV["MINT_ACCOUNT"]}").find(".balance").text
-puts balance
 
 send_daily_balance(balance)
